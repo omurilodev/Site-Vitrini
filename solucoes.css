@@ -1,0 +1,244 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: #282828;
+  font-family: 'Inter';
+}
+
+ul, li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.redesNav{
+  display: flex;
+  background-color: #020304;
+  padding: 5px 100px;
+  gap: 20px;
+}
+
+.redesNav h6{
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.instaNAV, .ytNAV{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+video{
+  max-width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+/* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+nav{
+  position: relative;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px;
+  z-index: 10000;
+}
+
+
+.containerNAV{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.itensNAV{
+  display: flex;
+  gap: 0 20px;
+}
+
+.itensNAV li{
+  color: white;
+  z-index: 1000;
+}
+
+/* INICIO */
+
+.containerInicio{
+  background-image: url(./assets/fundoSolucoes.webp);
+  min-height: calc(100vh - 20px);
+  background-position: center;
+  width: 100%;
+}
+
+.containerSolucoes{
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+
+.textoSolucoes{
+  margin-top: 100px;
+}
+
+.textoSolucoes h1{
+  color: white;
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-size: 42px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+
+}
+
+.textoSolucoes p{
+  max-width: 700px;
+  color: white;
+  margin-bottom: 50px;
+  font-size: 18px;
+  font-weight: 200;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.30);
+
+}
+
+
+
+.textoSolucoes a{
+ 
+  color: white;
+  
+    backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(6px); 
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.) 0%,   
+   rgba(255, 255, 255, 0.05) 100% 
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  
+  border-radius: 44px;
+  padding: 20px 40px 20px 40px;
+  transition: 1.5s ease-in-out;
+  font-weight: 200;
+  background: rgba(0,0,0,0.2);
+}
+
+.textoSolucoes a:hover{
+   background: rgba(255, 255, 255, 0.05); /* Fundo quase não muda */
+  
+  /* A borda brilha intensamente */
+  border-color: gainsboro;
+  box-shadow: 
+    0 0 10px #fff, 
+  0 0 10px rgba(255, 255, 255, 0.1); /* Brilho interno */
+}
+
+/* CONTEÚDO */
+
+.containerConteudo{
+  background-image: url(./assets/fundoSolucoes2.webp);
+  background-position: top;
+
+
+}
+
+.containerConteudo2{
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* ICONES */
+
+.containerConteudo h1{
+  display: flex;
+  justify-content: center;
+background: linear-gradient(90deg, #D0CCC6 0%, #999 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight: 400;
+padding: 50px 0;
+font-size: 38px;
+}
+
+.icones{
+  display: flex;
+    justify-content: space-evenly;
+}
+
+
+.icones h4{
+  max-width: 300px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #D0CCC6 0%, #999 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.protecao, .residencial, .corp{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+/* CSS: Estilo e Animação */
+.whatsapp-link {
+    position: fixed; /* O segredo para ele "correr" junto com a tela */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Verde Oficial do WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Garante que fique acima de tudo */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efeito Hover (passar o mouse) */
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Ícone SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
+
+/* Responsividade: Ajuste para celulares */
+@media (max-width: 768px) {
+    .whatsapp-link {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}

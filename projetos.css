@@ -1,0 +1,333 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: #282828;
+  font-family: 'Inter';
+}
+
+ul, li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.redesNav{
+  display: flex;
+  background-color: #020304;
+  padding: 5px 100px;
+  gap: 20px;
+}
+
+.redesNav h6{
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.instaNAV, .ytNAV{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+nav{
+  position: relative;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px;
+  z-index: 10000;
+}
+
+
+.containerNAV{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.itensNAV{
+  display: flex;
+  gap: 0 20px;
+}
+
+.itensNAV li{
+  color: white;
+  z-index: 1000;
+}
+
+
+/* TEXTO INICIAL*/
+
+.container{
+  background-image: url(./assets/fundoQUEM.webp);
+  background-position: top;
+  padding-bottom:50px;
+}
+
+.textoProjetos{
+  max-width: 1160px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.textos{
+  margin-top: 100px;
+}
+
+.textos h1{
+  font-size: 42px;
+  font-weight: 400;
+  font-size: 48px;
+  background: linear-gradient(90deg, #62675F 0%, #9DA09C 50%, #62675F 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.textos p{
+  margin-top: 10px;
+  max-width: 500px;
+  font-size: 20px;
+  color: #F1F0EC;
+  font-weight: 300;
+}
+
+.regua{
+  position: absolute;
+  top: 200px;
+  right: 100px;
+}
+
+/* FOTOS DO PROJETO*/
+
+.portfolio-grid {
+    display: grid;
+    /* O Segredo: 3 colunas de frações iguais */
+    grid-template-columns: repeat(3, 1fr);
+    /* Altura das linhas: min 300px, mas cresce se precisar */
+    grid-auto-rows: minmax(300px, auto);
+    gap: 20px; /* O respiro entre as imagens */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/* --- Classes Utilitárias de Tamanho --- */
+
+/* Ocupa 1 coluna (padrão) */
+.span-1 {
+    grid-column: span 1;
+}
+
+/* Ocupa 2 colunas */
+.span-2 {
+    grid-column: span 2;
+}
+
+/* Ocupa 3 colunas (largura total) */
+.span-3 {
+    grid-column: span 3;
+}
+
+/* --- Estilização das Imagens --- */
+.grid-item {
+    position: relative;
+    overflow: hidden;
+   
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESSENCIAL: Garante que a foto preencha o quadrado sem esticar */
+    display: block;
+}
+
+/* Um efeito extra de hover para dar vida (opcional) */
+.grid-item.aparecer:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item {
+    /* Mantém as propriedades anteriores (border-radius, shadow, etc) */
+    opacity: 0;
+    transform: translateY(50px); /* Empurra 50px para baixo */
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva suave "ease-out" */
+    
+    /* Opcional: para evitar que eles pisquem ao carregar */
+    will-change: transform, opacity; 
+}
+
+/* Estado final: classe que o JS vai adicionar */
+.grid-item.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+
+.vitrini-footer {
+    background-color: #020304;
+    color: #ffffff;
+    padding: 20px 20px 40px;
+    width: 100%;
+    font-family: 'Inter', sans-serif; /* Certifique-se de ter essa fonte ou similar */
+    
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumentei o espaço geral */
+}
+
+/* --- Topo --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Links */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Contato (Correção da quebra de linha) */
+.footer-contact {
+  margin-top: 20px;  
+  text-align: right;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    /* Impede que o container fique muito estreito */
+    min-width: 300px; 
+}
+
+.email-link {
+    display: block;
+    margin-top: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+/* --- Divisória --- */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #333333; /* Cor sólida para ficar mais visível */ 
+}
+
+/* --- Base (Logo e Social) --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Correção das imagens dos ícones */
+.social-icons img {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    /* Removi o filtro "brightness" que podia estar deixando o Youtube quadrado branco. 
+       Se suas imagens forem pretas e precisarem ficar brancas, descomente a linha abaixo: */
+    /* filter: brightness(0) invert(1); */
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-logo img {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: auto;
+    object-fit: contain;
+}
+
+/* CSS: Estilo e Animação */
+.whatsapp-link {
+    position: fixed; /* O segredo para ele "correr" junto com a tela */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Verde Oficial do WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Garante que fique acima de tudo */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efeito Hover (passar o mouse) */
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Ícone SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
+
+/* Responsividade: Ajuste para celulares */
+@media (max-width: 768px) {
+    .whatsapp-link {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}

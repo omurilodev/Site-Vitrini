@@ -1,0 +1,729 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: #282828;
+  font-family: 'Inter';
+}
+
+ul, li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+
+.redesNav{
+  display: flex;
+  background-color: #020304;
+  padding: 5px 100px;
+  gap: 20px;
+}
+
+.redesNav h6, .redesNav a{
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.instaNAV, .ytNAV{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.instaNAV a, .ytNAV a{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+nav{
+  position: relative;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px;
+  z-index: 10000;
+}
+
+
+.containerNAV{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.itensNAV{
+  display: flex;
+  gap: 0 20px;
+}
+
+.itensNAV li{
+  color: white;
+  z-index: 1000;
+}
+
+/* CONTEÚDO DA HOMEPAGE  */
+
+.pattern{
+  position: absolute;
+  top: 32px;
+  right: 90px;
+  z-index: 1;
+}
+
+.containerHOME{
+  background-image: url(./assets/fundoHome.webp);
+  background-size: 100%;
+  background-position: center;
+  min-height: 100vh;
+  
+}
+
+.HOME{
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;      
+  min-height: 100vh;       /* Ativa o Flexbox */
+  align-items: center;       /* Centraliza verticalmente */
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+}
+
+.textoHOME{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  animation: surgirDeBaixo 2.5s forwards;
+
+}
+
+.textoHOME h1{
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+}
+
+.textoHOME p{
+  display: flex;
+  text-align: center;
+  max-width: 850px;
+  color: white;
+  font-weight: 200;
+  margin-top: 10px;
+  font-size: 18px;
+  text-shadow: 3px 4px 6.9px rgba(0, 0, 0, 0.37);
+}
+
+.textoHOME a{
+  color: white;
+  margin-top: 20px;
+    backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(6px); 
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.) 0%,   
+   rgba(255, 255, 255, 0.05) 100% 
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 44px;
+  padding: 20px 40px 20px 40px;
+  transition: 1.5s ease-in-out;
+  font-weight: 200;
+  background: rgba(0,0,0,0.3);
+
+}
+
+.textoHOME a:hover{
+   background: rgba(255, 255, 255, 0.05); /* Fundo quase não muda */
+  
+  /* A borda brilha intensamente */
+  border-color: gainsboro;
+  box-shadow: 
+    0 0 10px #fff, 
+  0 0 10px rgba(255, 255, 255, 0.1); /* Brilho interno */
+}
+
+@keyframes surgirDeBaixo {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30px para baixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição original */
+  }
+}
+
+/* CLIENTES PARCEIROS */
+
+
+.parceiros{
+  display: flex;
+  max-width: 1160px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.fundoParceiros{
+  background: #D0CCC6;
+}
+
+.fundoParceiros {
+  background: #D0CCC6;
+  overflow: hidden; /* Essencial: esconde a barra de rolagem horizontal */
+  padding: 20px 0;
+  width: 100%;
+}
+
+.parceiros {
+  display: flex;
+  gap: 60px; /* Ajuste o espaçamento entre logos aqui */
+  width: max-content; /* Força a div a ter a largura da soma de todos os itens */
+  animation: slideInfinito 40s linear infinite; /* 20s é a velocidade */
+}
+
+/* Otimização: Pausar a animação quando o usuário passar o mouse */
+.parceiros:hover {
+  animation-play-state: paused;
+}
+
+/* Garante que as imagens não distorçam */
+.parceiros img {
+  display: block;
+  /* Sugestão: defina uma altura fixa para alinhar todos visualmente */
+  height: 70px; 
+  width: auto;
+}
+
+.fundoParceiros {
+  background: #D0CCC6;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden; /* Esconde a barra de rolagem */
+  cursor: grab; /* Ícone de mãozinha para indicar que é arrastável */
+}
+
+.fundoParceiros:active {
+  cursor: grabbing; /* Ícone de mão fechada ao clicar */
+}
+
+.parceiros {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  /* Removemos a animação CSS daqui */
+}
+
+.parceiros img {
+  pointer-events: none; /* Importante: impede que o navegador tente arrastar a imagem em si (ghost image) ao invés do slider */
+  user-select: none;
+}
+
+/* SESSÃO SOBRE HOMEPAGE */
+
+.sobreHOME{
+  background-image: url(./assets/sobreSessao.webp);
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin-bottom: -25px;
+}
+
+.containerSOBRE{
+  max-width: 1160px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: end;
+  align-items: end;
+}
+
+.textoSOBRE{
+  margin-top: 50px;
+}
+
+
+.textoSOBRE h1{
+  background: linear-gradient(102deg, #D0CCC6 5.81%, #999 87.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  position: relative;
+}
+
+.textoSOBRE h1::before{
+   content: '';
+  position: absolute;
+    left: -10px; /* Cola na esquerda */
+    top: 4px;
+    /* AQUI ESTÁ O SEGREDO DA BARRA VERTICAL: */
+    width: 2px; /* Espessura da linha */
+    height: 90%; 
+    background-color: #ffffff; 
+
+}
+
+.textoSOBRE p{
+  max-width: 400px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 40px ;
+}
+
+.textoSOBRE a{
+color: #282828;
+padding: 18px 42px 17px 41px;
+justify-content: center;
+align-items: center;
+border-radius: 44px;
+border-radius: 44px;
+background: linear-gradient(90deg, #F1F0EC 0%, #999 100%);
+}
+
+/* CARDS */
+
+.descricaoBeneficios {
+  background-image: url(./assets/fundoHome2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centraliza os 4 cards na tela */
+  align-items: flex-start; /* Alinha eles pelo topo */
+  gap: 30px; /* O espaço entre cada card (chega de margem 1000px!) */
+  flex-wrap: wrap; /* Se a tela for pequena, o card desce sozinho */
+  padding: 0 50px; /* Uma margem de segurança nas laterais */
+  position: relative;
+}
+
+
+
+
+/* O Estilo Individual de cada Card */
+.card-beneficio {
+  position: relative; /* O Pai é relativo para o filho (texto) poder flutuar nele */
+  width: 260px;       /* Largura fixa do card/moldura */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease; /* Um charminho extra */
+}
+
+/* Efeito Hover (opcional): O card sobe levemente quando passa o mouse */
+.card-beneficio:hover {
+  transform: translateY(-10px);
+}
+
+/* A Imagem (A moldura de vidro) */
+.card-beneficio img {
+  width: 100%;  /* Ocupa 100% do card */
+  height: auto; /* Mantém a proporção */
+  position: relative; /* Reseta posições antigas */
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+/* O Texto (Que fica DENTRO da moldura) */
+.card-beneficio p {
+  position: absolute; /* Flutua em cima da imagem */
+  top: 50%;           /* Tenta ficar no meio verticalmente */
+  left: 50%;          /* Tenta ficar no meio horizontalmente */
+  transform: translate(-50%, -60%); /* Ajuste fino para centralizar exato */
+  width: 80%;         /* Não encosta nas bordas da moldura */
+  text-align: center;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;    /* Ajustei levemente para caber bem */
+  line-height: 1.4;   /* Melhora a leitura */
+  margin: 0;
+    background: linear-gradient(90deg, #D0CCC6 0%, #8B8A88 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards{
+  display: flex;
+  gap: 0 30px;
+  margin-top: 0px;
+}
+
+.descricaoBeneficios h1{
+  background: linear-gradient(90deg, #D0CCC6 0%, #8B8A88 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.descricaoBeneficios a{
+  color: #282828;
+padding: 18px 42px 17px 41px;
+justify-content: center;
+align-items: center;
+border-radius: 44px;
+background: linear-gradient(90deg, #F1F0EC 0%, #999 100%);
+font-size: 20px;
+}
+
+
+.degrade{
+background: linear-gradient(90deg, #62675F 0%, #8B8A88 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: Inter;
+font-size: 42px;
+font-style: italic;
+font-weight: 400;
+line-height: normal;
+}
+
+/* SESSÃO DE PROJETOS */
+
+.projetosSessao h1{
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 48px;
+  background: linear-gradient(90deg, #62675F 0%, #9DA09C 50%, #62675F 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.projetosSessao h1::before,
+.projetosSessao h1::after {
+  content: '';          /* Obrigatório para pseudoelementos aparecerem */
+  width: 450px;             /* Faz a linha crescer para ocupar o espaço sobrando */
+  height: 2px;          /* Espessura da linha */
+  background-color: #333; /* Cor da linha */
+  margin: 0 20px;
+}
+
+
+
+
+.containerImagem{
+  display: flex;
+  justify-self: center;
+   position: relative;
+}
+
+.botaoProjetos{
+  position: absolute; /* Agora ele flutua em relação ao .containerImagem */
+  
+  /* Posicionamento - Ajuste esses valores "na unha" para cair no lugar certo */
+  bottom: 25px;
+   /* Distância do fundo */
+  left: 3%;    /* Distância da esquerda (use % para ser responsivo) */
+  
+  /* Estilização básica pra ficar visível */
+  z-index: 10; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 20px 30px;
+  text-decoration: none;
+
+
+      backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(6px); 
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.) 0%,   
+   rgba(255, 255, 255, 0.05) 100% 
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 44px;
+  padding: 20px 30px 20px 30px;
+  transition: 1.5s ease-in-out;
+  font-weight: 200;
+  
+}
+
+.containerImagem img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.logoFUNDO{
+  position: absolute;
+  width: 100%;
+  margin-top: 100px;
+  /* ESTADO INICIAL: Invisível para o usuário não ver antes da hora */
+  opacity: 0; 
+  /* (Opcional) Adiciona will-change para performance */
+  will-change: opacity, transform;
+}
+
+.logoFUNDO.visivel{
+  animation: fadeInUp 2s forwards;
+}
+
+
+.botaoProjetos:hover{
+   background: rgba(255, 255, 255, 0.05); /* Fundo quase não muda */
+  
+  /* A borda brilha intensamente */
+  border-color: gainsboro;
+  box-shadow: 
+    0 0 10px #fff, 
+  0 0 10px rgba(255, 255, 255, 0.1); /* Brilho interno */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Começa 40px abaixo da posição original */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição exata */
+  }
+}
+
+/* CERTIFICAÇÕES */
+
+
+.certificacoes-wrapper {
+  max-width: 85%; /* Ocupa a largura da tela */
+  margin-top: 120px; /* Seu margin original */
+  overflow: hidden; /* Esconde o que sai da tela */
+   margin-left: 100px;
+  /* Opcional: Fade nas laterais para ficar elegante */
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+/* A "Fita" que se move */
+.certificacoes {
+  display: flex;
+  gap: 90px; /* Seu gap original */
+  width: max-content; /* Força a largura a ser a soma dos itens */
+  flex-wrap: nowrap;
+ 
+  /* A animação será controlada via JS para garantir fluidez, 
+     mas definimos a base aqui */
+}
+
+/* Animação que será ativada */
+.certificacoes[data-animated="true"] {
+  animation: scroll 40s linear infinite;
+}
+
+
+@keyframes scroll {
+  to {
+    /* Move para a esquerda 50% do tamanho total (que será o tamanho original + clone) */
+    /* O ajuste de pixels ajuda a compensar o gap no final do loop */
+    transform: translate(calc(-50% - 45px)); 
+  }
+}
+
+
+
+/* FOOTER */
+
+.vitrini-footer {
+    background-color: #020304;
+    color: #ffffff;
+    padding: 20px 20px 40px;
+    width: 100%;
+    font-family: 'Inter', sans-serif; /* Certifique-se de ter essa fonte ou similar */
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumentei o espaço geral */
+}
+
+/* --- Topo --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Links */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Contato (Correção da quebra de linha) */
+.footer-contact {
+  margin-top: 20px;  
+  text-align: right;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    /* Impede que o container fique muito estreito */
+    min-width: 300px; 
+}
+
+.email-link {
+    display: block;
+    margin-top: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+/* --- Divisória --- */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #333333; /* Cor sólida para ficar mais visível */ 
+}
+
+/* --- Base (Logo e Social) --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Correção das imagens dos ícones */
+.social-icons img {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    /* Removi o filtro "brightness" que podia estar deixando o Youtube quadrado branco. 
+       Se suas imagens forem pretas e precisarem ficar brancas, descomente a linha abaixo: */
+    /* filter: brightness(0) invert(1); */
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-logo img {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: auto;
+    object-fit: contain;
+}
+
+/* CSS: Estilo e Animação */
+.whatsapp-link {
+    position: fixed; /* O segredo para ele "correr" junto com a tela */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Verde Oficial do WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Garante que fique acima de tudo */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efeito Hover (passar o mouse) */
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Ícone SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
+
+
+
+
+/* Responsividade: Ajuste para celulares */
+@media (max-width: 768px) {
+    .whatsapp-link {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+    .footer-top, .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-contact {
+        text-align: center;
+        min-width: auto; /* Reseta a largura mínima no celular */
+    }
+    
+    .social-icons {
+        margin-bottom: 20px; /* Espaço entre social e logo no celular */
+    }
+}

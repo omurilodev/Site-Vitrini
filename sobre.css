@@ -1,0 +1,476 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: #282828;
+  font-family: 'Inter';
+}
+
+ul, li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.redesNav{
+  display: flex;
+  background-color: #020304;
+  padding: 5px 100px;
+  gap: 20px;
+}
+
+.redesNav h6{
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.instaNAV, .ytNAV{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+nav{
+  position: relative;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px;
+  z-index: 10000;
+}
+
+
+.containerNAV{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.itensNAV{
+  display: flex;
+  gap: 0 20px;
+}
+
+.itensNAV li{
+  color: white;
+  z-index: 1000;
+}
+
+/* INICIO DA PÁGINA*/
+
+.containerSOBRE{
+  background-image: url(./assets/fundoQUEM.webp);
+  background-position: top;
+}
+
+
+
+
+/* video */
+
+video{
+  width: 100%;
+}
+
+.video{
+  max-width: 1160px;
+  margin: 10px auto;
+}
+
+/* ICONES */
+
+.icones{
+  display: flex;
+  max-width: 1100px;
+  margin: 0px auto;
+  margin-top: 100px;
+  margin-bottom: 00px;
+  gap: 190px;
+}
+
+/* --- Seu código original --- */
+.icones {
+  display: flex;
+  max-width: 1100px;
+  margin: 0px auto;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  gap: 190px;
+}
+
+/* --- O Novo Código de Animação --- */
+
+/* Estado inicial das imagens: Invisíveis e deslocadas para baixo */
+.icones img {
+  opacity: 0;
+  transform: translateY(40px); /* Começa 40px abaixo da posição final */
+  /* 'all' anima tanto a opacidade quanto a posição */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  will-change: opacity, transform; /* Otimização de performance para o navegador */
+}
+
+/* Estado final: Quando o JS adicionar a classe 'ativo' */
+.icones img.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Delays Escalonados (Stagger) --- */
+/* Cada imagem espera um pouco mais que a anterior */
+
+.icones img:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.icones img:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.icones img:nth-child(3) {
+  transition-delay: 0.5s;
+}
+
+.icones img:nth-child(4) {
+  transition-delay: 0.7s;
+}
+
+/* SESSÃO DE DESCRIÇÃO DA PÁGINA */
+
+.sessaoPrincipal{
+  background-image: url(./assets/fundoQUEM2.webp);
+  background-position: top;
+  z-index: -1;
+  margin-top: 100px;
+}
+
+
+.Vitrini{
+  margin-left:  auto;
+  margin-right: auto;
+  max-width: 1160px;
+  
+  
+}
+
+
+.Vitrini h1{
+  background: linear-gradient(102deg, #D0CCC6 5.81%, #999 87.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  position: relative;
+  font-size: 38px;
+
+  
+}
+
+.Vitrini h1::before{
+  content: '';
+  position: absolute;
+    left: -10px; /* Cola na esquerda */
+    top: 4px;
+    /* AQUI ESTÁ O SEGREDO DA BARRA VERTICAL: */
+    width: 2px; /* Espessura da linha */
+    height: 90%; 
+    background-color: #ffffff; 
+}
+
+.Vitrini p{
+  font-size: 20px;
+  max-width: 400px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 40px ;
+  font-weight: 200;
+
+
+}
+
+
+
+.containerProposito{
+    max-width: 1160px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 100px;
+  justify-content: end;
+  align-items: end;
+}
+
+
+
+.proposito h1{
+  background: linear-gradient(102deg, #D0CCC6 5.81%, #999 87.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  position: relative;
+  font-size: 38px;
+  
+}
+
+.proposito h1::before{
+     content: '';
+  position: absolute;
+    left: -10px; /* Cola na esquerda */
+    top: 8px;
+    /* AQUI ESTÁ O SEGREDO DA BARRA VERTICAL: */
+    width: 2px; /* Espessura da linha */
+    height: 90%; 
+    background-color: #ffffff; 
+}
+
+.proposito p{
+    max-width: 400px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 40px ;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+/* CULTURA */
+
+.cultura{
+  background-image: url(./assets/fundoQUEM3.webp);
+  background-position: top;
+  
+}
+
+.textoCultura{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.textoCultura h1{
+    background: linear-gradient(102deg, #D0CCC6 5.81%, #999 87.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  position: relative;
+  font-size: 42px;
+  margin-left: 40px;
+}
+
+.textoCultura p{
+  max-width: 1160px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 200;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 40px ;
+}
+
+
+
+/* CERTIFICAÇÕES */
+
+.certificacoes-wrapper {
+  max-width: 85%; /* Ocupa a largura da tela */
+  margin-top: 120px; /* Seu margin original */
+  overflow: hidden; /* Esconde o que sai da tela */
+   margin-left: 100px;
+  /* Opcional: Fade nas laterais para ficar elegante */
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  padding-bottom: 100px;
+}
+
+/* A "Fita" que se move */
+.certificacoes {
+  display: flex;
+  gap: 90px; /* Seu gap original */
+  width: max-content; /* Força a largura a ser a soma dos itens */
+  flex-wrap: nowrap;
+ 
+  /* A animação será controlada via JS para garantir fluidez, 
+     mas definimos a base aqui */
+}
+
+/* Animação que será ativada */
+.certificacoes[data-animated="true"] {
+  animation: scroll 40s linear infinite;
+}
+
+
+@keyframes scroll {
+  to {
+    /* Move para a esquerda 50% do tamanho total (que será o tamanho original + clone) */
+    /* O ajuste de pixels ajuda a compensar o gap no final do loop */
+    transform: translate(calc(-50% - 45px)); 
+  }
+}
+
+
+
+/* FOOTER */
+
+.vitrini-footer {
+    background-color: #020304;
+    color: #ffffff;
+    padding: 20px 20px 40px;
+    width: 100%;
+    font-family: 'Inter', sans-serif; /* Certifique-se de ter essa fonte ou similar */
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumentei o espaço geral */
+}
+
+/* --- Topo --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Links */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Contato (Correção da quebra de linha) */
+.footer-contact {
+  margin-top: 20px;  
+  text-align: right;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    /* Impede que o container fique muito estreito */
+    min-width: 300px; 
+}
+
+.email-link {
+    display: block;
+    margin-top: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+/* --- Divisória --- */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #333333; /* Cor sólida para ficar mais visível */ 
+}
+
+/* --- Base (Logo e Social) --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Correção das imagens dos ícones */
+.social-icons img {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    /* Removi o filtro "brightness" que podia estar deixando o Youtube quadrado branco. 
+       Se suas imagens forem pretas e precisarem ficar brancas, descomente a linha abaixo: */
+    /* filter: brightness(0) invert(1); */
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-logo img {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: auto;
+    object-fit: contain;
+}
+
+/* CSS: Estilo e Animação */
+.whatsapp-link {
+    position: fixed; /* O segredo para ele "correr" junto com a tela */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Verde Oficial do WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Garante que fique acima de tudo */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efeito Hover (passar o mouse) */
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Ícone SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+}
+
+/* Responsividade: Ajuste para celulares */
+@media (max-width: 768px) {
+    .whatsapp-link {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
