@@ -8,6 +8,7 @@
 body{
   background-color: #282828;
   font-family: 'Inter';
+  padding-top: 100px;
 }
 
 ul, li{
@@ -22,8 +23,6 @@ a{
 .redesNav{
   display: flex;
   background-color: #020304;
-  padding: 5px 100px;
-  gap: 20px;
 }
 
 .redesNav h6{
@@ -38,11 +37,7 @@ a{
   gap: 5px;
 }
 
-video{
-  max-width: 100%;
-  position: absolute;
-  z-index: -1;
-}
+
 
 /* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
 nav{
@@ -73,11 +68,93 @@ nav{
   z-index: 1000;
 }
 
+
+
+
+.redesNav{
+  display: flex;
+  background-color: #020304;
+  padding: 5px 100px;
+  gap: 20px;
+}
+
+.redesNav h6, .redesNav a{
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.instaNAV, .ytNAV{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.instaNAV a, .ytNAV a{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+nav{
+  position: relative;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0px;
+  z-index: 10000;
+}
+
+/* Escondido por padrão no Desktop */
+.menu-hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.containerNAV{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.itensNAV{
+  display: flex;
+  gap: 0 20px;
+}
+
+.itensNAV li{
+  color: white;
+  z-index: 1000;
+}
+
+
+header {
+  position: -webkit-sticky; /* Suporte para Safari */
+  position: fixed;
+  top: 0;
+  z-index: 10000; /* Garante que fique acima do conteúdo */
+  background-color: #0e0e0e; /* Mantendo o padrão dark que você curte */
+  width: 100%;
+}
 /* INICIO */
 
 .containerInicio{
   background-image: url(./assets/fundoSolucoes.webp);
-  min-height: calc(100vh - 20px);
+  min-height:100vh ;
   background-position: center;
   width: 100%;
 }

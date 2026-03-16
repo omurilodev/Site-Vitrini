@@ -8,6 +8,7 @@
 body{
   background-color: #282828;
   font-family: 'Inter';
+  padding-top: 100px ;
 }
 
 ul, li{
@@ -16,6 +17,15 @@ ul, li{
 
 a{
   text-decoration: none;
+}
+
+header {
+  position: -webkit-sticky; /* Suporte para Safari */
+  position: fixed;
+  top: 0;
+  z-index: 10000; /* Garante que fique acima do conteúdo */
+  background-color: #0e0e0e !important; /* Mantendo o padrão dark que você curte */
+  width: 100%;
 }
 
 
@@ -39,13 +49,31 @@ a{
 }
 
 /* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
+
+/* Escondido por padrão no Desktop */
+.menu-hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
 nav{
   position: relative;
-  max-width: 1160px;
   width: 100%;
   margin: 0 auto;
   padding: 20px 0px;
   z-index: 10000;
+  background-color: #0e0e0e;
 }
 
 
@@ -55,6 +83,8 @@ nav{
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 
 .itensNAV{
@@ -68,12 +98,14 @@ nav{
 }
 
 
+
+
 /* TEXTO INICIAL*/
 
 .container{
   background-image: url(./assets/fundoQUEM.webp);
   background-position: top;
-  padding-bottom:50px;
+  background-color: #0e0e0e;
 }
 
 .textoProjetos{
@@ -108,6 +140,7 @@ nav{
   position: absolute;
   top: 200px;
   right: 100px;
+  z-index: -1;
 }
 
 /* FOTOS DO PROJETO*/
@@ -121,7 +154,7 @@ nav{
     gap: 20px; /* O respiro entre as imagens */
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 /* --- Classes Utilitárias de Tamanho --- */
@@ -186,6 +219,7 @@ nav{
     padding: 20px 20px 40px;
     width: 100%;
     font-family: 'Inter', sans-serif; /* Certifique-se de ter essa fonte ou similar */
+    margin-top: 80px;
     
 }
 
@@ -213,6 +247,11 @@ nav{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background-color: #020304;
+}
+
+.footer-nav{
+    background-color: #020304;
 }
 
 .footer-nav a {
@@ -330,4 +369,240 @@ nav{
         width: 28px;
         height: 28px;
     }
+}
+
+
+
+
+/* --- ADAPTAÇÃO TABLET (768px) --- */
+@media (max-width: 768px) {
+        .redesNav {
+        padding: 5px 20px;
+        justify-content: start;
+    }
+    .menu-hamburger {
+    display: flex; /* Mostra o hambúrguer */
+  }
+
+  .itensNAV {
+    position: fixed;
+    left: -100%; /* Esconde o menu fora da tela */
+    top: 100px; /* Ajuste conforme a altura do seu header */
+    flex-direction: column;
+    background-color: #020304;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    z-index: 9999;
+  }
+
+  /* Quando o menu estiver ativo */
+  .itensNAV.active {
+    left: 0;
+  }
+
+  /* Animação do X (Transforma as barras em um X) */
+  .menu-hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+      nav {
+        padding: 20px;
+    }
+
+    .containerNAV {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+
+
+
+
+
+
+    .textoProjetos {
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textos p {
+        max-width: 100%;
+        margin: 10px auto;
+    }
+
+    .regua {
+        position: relative; /* Sai do absolute para não sobrepor */
+        top: -100px;
+        right: 0;
+        margin: 0px auto;
+        max-width: 100%; /* Garante que a régua não estoure a tela */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* No tablet, usamos 2 colunas */
+        padding: 0 20px;
+        margin-top: 5px !important;
+    }
+
+    /* Ajuste dos spans para 2 colunas */
+    .span-2, .span-3 {
+        grid-column: span 2; /* Tudo que era grande vira largura total (2/2) */
+    }
+
+        .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-contact {
+        text-align: center;
+        min-width: unset;
+    }
+}
+
+/* --- ADAPTAÇÃO MOBILE (425px) --- */
+@media (max-width: 425px) {
+
+
+     .textoProjetos {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .redesNav h6 {
+        display: none; /* Esconde o texto @ e deixa só os ícones para poupar espaço */
+    }
+
+    .itensNAV {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .logoNAV {
+        width: 150px;
+    }
+
+
+    .textos h1 {
+        font-size: 32px;
+    }
+
+    .textos p {
+        font-size: 16px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* No celular, é tudo uma coluna só */
+        grid-auto-rows: 250px; /* Altura um pouco menor para não ficar infinito */
+        gap: 15px;
+    }
+
+    /* Reset total dos spans: No mobile, cada projeto ocupa sua própria linha */
+    .span-1, .span-2, .span-3 {
+        grid-column: span 1;
+    }
+
+    .regua {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+      .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 20px;
+    
+    }
+}
+
+
+.album{
+    background-color: #F1F0EC;
+    padding-bottom: 40px;
+    padding-top: 1px;
+    max-width: 1260px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+
+/* Prepara o item pai para receber o submenu absoluto */
+.itensNAV .dropdown {
+  position: relative;
+}
+
+/* Estilo do container do submenu oculto por padrão */
+.itensNAV .dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 140%; /* Posiciona logo abaixo do link Soluções */
+  left: -60%;
+  background-color: #ffffff; /* Ajuste para a cor do seu layout */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 4px;
+  transform: translateY(10px); /* Leve recuo para animação */
+  transition: all 0.3s ease;
+  z-index: 999; /* Garante que fique por cima de outros elementos */
+}
+
+/* Estilo dos links internos do dropdown */
+.itensNAV .dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333333; /* Ajuste para a cor do seu layout */
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+/* Efeito Hover nos itens internos */
+.itensNAV .dropdown-content li a:hover {
+  background-color: #f1f1f1; /* Ajuste para a cor do seu layout */
+}
+
+/* Revela o menu no Hover do item pai (.dropdown) */
+.itensNAV .dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Transforma o link <a> em um flex container para alinhar a imagem e o texto */
+.instaNAV a, 
+.ytNAV a {
+  display: flex;
+  flex-direction: row; /* Flex já é row por padrão, mas é bom reforçar */
+  align-items: center; /* Centraliza verticalmente a logo e o texto */
+  text-decoration: none; /* Remove qualquer sublinhado padrão de links */
+  gap: 5px;
+}
+
+/* Remove a margem padrão do h6 que pode desalinhá-lo do centro da imagem */
+.instaNAV h6, 
+.ytNAV h6 {
+  margin: 0;
+  color: #ffffff; /* Ajuste para a cor que você está usando no header */
+} 
+
+header a{
+    color: white;
 }

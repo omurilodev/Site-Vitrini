@@ -12,44 +12,59 @@
 </head>
 
 <body>
-    <div class="redesNav">
-        <div class="instaNAV">
-            <img src="./assets/instaNAV.webp" alt="instagram">
-            <h6>@vitrinifilms</h6>
+    <header>
+  <div class="redesNav">
+    <div class="instaNAV">
+      <a href="https://www.instagram.com/vitrinifilms/">
+        <img src="./assets/instaNAV.webp" alt="instagram">
+        <h6>@vitrinifilms</h6>
+      </a>
+    </div>
+    <div class="ytNAV">
+      <a href="https://www.youtube.com/@vitrinifilms/featured">
+        <img src="./assets/ytNAV.webp" alt="youtube">
+        <h6>Vitrini Films</h6>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav>
+      <div class="containerNAV">
+        <a href="./"><img class="logoNAV" src="./assets/logoNAV.webp" alt="Logo Vitrini"></a>
+        
+        <div class="menu-hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <div class="ytNAV">
-            <img src="./assets/ytNAV.webp" alt="youtube">
-            <h6>Vitrini Films</h6>
+        
+        <ul class="itensNAV" id="nav-menu">
+          <li><a href="./sobre.html">QUEM SOMOS</a></li>
+          <li><a href="./projetos.html">PROJETOS</a></li> <li class="dropdown">
+            <a href="./solucoes.html">SOLUÇÕES</a>
+            <ul class="dropdown-content">
+              <li><a href="./solucoes.html#controle-solar">CONTROLE SOLAR</a></li>
+              <li><a href="./solucoes.html#dual-climate">DUAL-CLIMATE</a></li>
+              <li><a href="./solucoes.html#safety-security">SAFETY & SECURITY</a></li>
+              <li><a href="./solucoes.html#decor">DECOR</a></li>
+              <li><a href="./solucoes.html#wingsafe">WingSafe</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+ </header>
+    <div class="textoProjetos">
+        <div class="textos">
+            <h1>PROJETOS</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nunc lorem. Pellentesque ullamcorper dolor id auctor sagittis.</p>
         </div>
+        <img class="regua" src="./assets/regua.webp" alt="">
     </div>
 
 
-    <div class="container">
-        <nav>
-            <div class="containerNAV">
-                <a href="./"><img class="logoNAV" src="./assets/logoNAV.webp" alt=""></a>
-                <ul class="itensNAV">
-                    <a href="./sobre.html">
-                        <li>QUEM SOMOS</li>
-                    </a>
-                    <a href="">
-                        <li>PROJETOS</li>
-                    </a>
-                    <a href="./solucoes.html">
-                        <li>SOLUÇÕES</li>
-                    </a>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="textoProjetos">
-            <div class="textos">
-                <h1>PROJETOS</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet nunc lorem. Pellentesque ullamcorper dolor id auctor sagittis.</p>
-            </div>
-            <img class="regua" src="./assets/regua.webp" alt="">
-        </div>
-
+    <div class="album">
         <section class="portfolio-grid">
             <div class="grid-item span-2">
                 <img src="assets/projeto1.webp" alt="Projeto 1">
@@ -86,6 +101,7 @@
                 <img src="assets/projeto10.webp" alt="Projeto 10">
             </div>
         </section>
+    </div>
     </div>
     <footer class="vitrini-footer">
         <div class="footer-container">

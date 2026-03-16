@@ -45,3 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const icones = document.querySelectorAll('.icones img');
   icones.forEach(img => observer.observe(img));
 });
+
+
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+  // Abre/Fecha o menu e anima o ícone
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Fechar o menu ao clicar em qualquer link
+document.querySelectorAll(".itensNAV a").forEach(n => n.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}));

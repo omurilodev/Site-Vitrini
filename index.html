@@ -12,35 +12,51 @@
 </head>
 
 <body>
-  <div class="redesNav">
-    <div class="instaNAV">
-      <a href="https://www.instagram.com/vitrinifilms/"><img src="./assets/instaNAV.webp" alt="instagram">
-      <h6>@vitrinifilms</h6></a>
-    </div>
-    <div class="ytNAV">
-      <a href="https://www.youtube.com/@vitrinifilms/featured"><img src="./assets/ytNAV.webp" alt="youtube">
-      <h6>Vitrini Films</h6></a>
-    </div>
-  </div>
 
 
   <section class="containerHOME">
-    <nav>
-      <div class="containerNAV">
-        <img class="logoNAV" src="./assets/logoNAV.webp" alt="">
-        <ul class="itensNAV">
-          <a href="./sobre.html">
-            <li>QUEM SOMOS</li>
+    <header>
+      <div class="redesNav">
+        <div class="instaNAV">
+          <a href="https://www.instagram.com/vitrinifilms/"><img src="./assets/instaNAV.webp" alt="instagram">
+            <h6>@vitrinifilms</h6>
           </a>
-          <a href="./projetos.html">
-            <li>PROJETOS</li>
+        </div>
+        <div class="ytNAV">
+          <a href="https://www.youtube.com/@vitrinifilms/featured"><img src="./assets/ytNAV.webp" alt="youtube">
+            <h6>Vitrini Films</h6>
           </a>
-          <a href="./solucoes.html">
-            <li>SOLUÇÕES</li>
-          </a>
-        </ul>
+        </div>
       </div>
-    </nav>
+
+      <nav>
+        <div class="containerNAV">
+          <img class="logoNAV" src="./assets/logoNAV.webp" alt="Logo">
+
+          <div class="menu-hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+          <ul class="itensNAV" id="nav-menu">
+            <li><a href="./sobre.html">QUEM SOMOS</a></li>
+            <li><a href="./projetos.html">PROJETOS</a></li>
+
+            <li class="dropdown">
+              <a href="./solucoes.html">SOLUÇÕES</a>
+              <ul class="dropdown-content">
+                <li><a href="./solucoes.html#controle-solar">CONTROLE SOLAR</a></li>
+                <li><a href="./solucoes.html#dual-climate">DUAL-CLIMATE</a></li>
+                <li><a href="./solucoes.html#safety-security">SAFETY & SECURITY</a></li>
+                <li><a href="./solucoes.html#decor">DECOR</a></li>
+                <li><a href="./solucoes.html#wingsafe">WingSafe</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main class="HOME">
       <img class="pattern" src="./assets/patternINICIO.webp" alt="">
       <div class="textoHOME">
@@ -51,29 +67,30 @@
     </main>
 
   </section>
-<div class="fundoParceiros slider-container">
-  <div class="parceiros slider-track">
-    <img src="./assets/sicoob.webp" alt="">
-    <img src="./assets/engerp.webp" alt="">
-    <img src="./assets/ism.webp" alt="">
-    <img src="./assets/basutti.webp" alt="">
-    <img src="./assets/metazil.webp" alt="">
-    <img src="./assets/messina.webp" alt="">
-    <img src="./assets/comfort.webp" alt="">
-    <img src="./assets/Cartorio.webp" alt="">
-    <img src="./assets/sacrecre.webp" alt="">
 
-    <img src="./assets/sicoob.webp" alt="">
-    <img src="./assets/engerp.webp" alt="">
-    <img src="./assets/ism.webp" alt="">
-    <img src="./assets/basutti.webp" alt="">
-    <img src="./assets/metazil.webp" alt="">
-    <img src="./assets/messina.webp" alt="">
-    <img src="./assets/comfort.webp" alt="">
-    <img src="./assets/Cartorio.webp" alt="">
-    <img src="./assets/sacrecre.webp" alt="">
+  <div class="fundoParceiros slider-container">
+    <div class="parceiros slider-track">
+      <img src="./assets/sicoob.webp" alt="">
+      <img src="./assets/engerp.webp" alt="">
+      <img src="./assets/ism.webp" alt="">
+      <img src="./assets/basutti.webp" alt="">
+      <img src="./assets/metazil.webp" alt="">
+      <img src="./assets/messina.webp" alt="">
+      <img src="./assets/sacrecre.webp" alt="">
+      <img src="./assets/comfort.webp" alt="">
+      <img src="./assets/Cartorio.webp" alt="">
+
+      <img src="./assets/sicoob.webp" alt="">
+      <img src="./assets/engerp.webp" alt="">
+      <img src="./assets/ism.webp" alt="">
+      <img src="./assets/basutti.webp" alt="">
+      <img src="./assets/metazil.webp" alt="">
+      <img src="./assets/messina.webp" alt="">
+      <img src="./assets/sacrecre.webp" alt="">
+      <img src="./assets/comfort.webp" alt="">
+      <img src="./assets/Cartorio.webp" alt="">
+    </div>
   </div>
-</div>
   <section class="sobreHOME">
     <div class="containerSOBRE">
       <div class="textoSOBRE">
@@ -90,47 +107,54 @@
     <h1>Benefícios dos <span class="degrade">Window Films</span></h1>
     <div class="cards">
       <div class="card-beneficio">
+        <h1 class="tituloCard">Rejeição de Calor</h1>
         <img src="./assets/topic1.webp" alt="">
         <p>Rejeitar o excesso de energia solar é um dos fatores que reduzem o calor interno e proporciona ambientes agradáveis e confortáveis.</p>
       </div>
 
       <div class="card-beneficio">
+        <h1 class="tituloCard">Redução da Claridade</h1>
         <img src="./assets/topic2.webp" alt="">
         <p>Filtros específicos do espectro solar reduzem o excesso de brilho e ofuscamento permitindo nitidez e perfeita transmissão óptica.</p>
       </div>
 
       <div class="card-beneficio">
+        <h1 class="tituloCard">Proteção UV</h1>
         <img src="./assets/topic3.webp" alt="">
         <p>Nossas películas proporcionam proteção para além do mobiliário. Protegemos também a sua saúde com o bloqueio dos raios UV.</p>
       </div>
 
       <div class="card-beneficio">
+        <h1 class="tituloCard">Economia de Energia</h1>
         <img src="./assets/topic4.webp" alt="">
         <p>Entregamos soluções que impactam diretamente na eficiência energética contribuindo para melhor performance dos sistemas de climatização.</p>
       </div>
     </div>
-    <a href="./solucoes.html">CONHEÇA OS PRODUTOS</a>
+    <a class="botaoSolucoes" href="./solucoes.html">CONHEÇA OS PRODUTOS</a>
   </section>
   <section class="projetosSessao">
     <h1>PROJETOS</h1>
     <img class="logoFUNDO" src="./assets/logoFUNDO.webp" alt="">
     <div class="containerImagem">
       <img src="./assets/projetosSessao.webp" alt="">
-      <a class="botaoProjetos" href="./projetos.html">CONHEÇA OS PROJETOS</a>
+      <a class="botaoProjetos" href="./projetos.html">CONHEÇA NOSSOS PROJETOS</a>
     </div>
 
   </section>
-  <div class="certificacoes-wrapper">
-    <div class="certificacoes">
-      <img src="./assets/certificado10.webp" alt="">
-      <img src="./assets/certificado5.webp" alt="">
-      <img src="./assets/certificado4.webp" alt="">
-      <img src="./assets/certificadoNOVO1.webp" alt="">
-      <img src="./assets/certificadoNOVO2.webp" alt="">
-      <img src="./assets/certificado3.webp" alt="">
-      <img src="./assets/certificado8.webp" alt="">
+
+  <section id="certificacoes">
+    <div class="certificacoes-wrapper">
+      <div class="certificacoes">
+        <img src="./assets/certificado10.webp" alt="">
+        <img src="./assets/certificado5.webp" alt="">
+        <img src="./assets/certificado4.webp" alt="">
+        <img src="./assets/certificadoNOVO1.webp" alt="">
+        <img src="./assets/certificadoNOVO2.webp" alt="">
+        <img src="./assets/certificado3.webp" alt="">
+        <img src="./assets/certificado8.webp" alt="">
+      </div>
     </div>
-  </div>
+  </section>
 
   <footer class="vitrini-footer">
     <div class="footer-container">
@@ -146,10 +170,11 @@
 
         <div class="footer-contact">
           <a href="https://maps.app.goo.gl/6SGhQEcdG8hu3NPE9">
-          <p>
-            Verano Mall - Rua Ivan Neiva Neves, 611<br>
-            Sl 110 - Res. Coqueiral, Vila Velha - ES
-          </p></a>
+            <p>
+              Verano Mall - Rua Ivan Neiva Neves, 611<br>
+              Sl 110 - Res. Coqueiral, Vila Velha - ES
+            </p>
+          </a>
           <a href="mailto:contato@vitrinifilms.com" class="email-link">contato@vitrinifilms.com</a>
         </div>
       </div>

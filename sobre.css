@@ -8,6 +8,7 @@
 body{
   background-color: #282828;
   font-family: 'Inter';
+  padding-top: 180px;
 }
 
 ul, li{
@@ -18,9 +19,19 @@ a{
   text-decoration: none;
 }
 
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: #0e0e0e;
+  
+}
 
 .redesNav{
   display: flex;
+  flex-direction: row;
   background-color: #020304;
   padding: 5px 100px;
   gap: 20px;
@@ -34,18 +45,46 @@ a{
 
 .instaNAV, .ytNAV{
   display: flex;
+  flex-direction: row !important;
   align-items: center;
   gap: 5px;
+}
+
+/* Escondido por padrão no Desktop */
+.menu-hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.4s;
 }
 
 /* NAVEGAÇÃO PRINCIPAL DA PÁGINA */
 nav{
   position: relative;
-  max-width: 1160px;
   width: 100%;
   margin: 0 auto;
   padding: 20px 0px;
   z-index: 10000;
+  background-color: #0e0e0e;
+}
+
+.header{
+  max-width: 1162px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 620px;
 }
 
 
@@ -59,11 +98,18 @@ nav{
 
 .itensNAV{
   display: flex;
+  flex-direction: row;
   gap: 0 20px;
 }
 
 .itensNAV li{
   color: white;
+  z-index: 1000;
+}
+
+header a{
+  color: white;
+  font-size: 16px;
   z-index: 1000;
 }
 
@@ -365,6 +411,10 @@ video{
     transition: opacity 0.3s;
 }
 
+.footer-nav{
+  background-color: #020304;
+}
+
 .footer-nav a:hover {
     opacity: 0.8;
 }
@@ -473,4 +523,249 @@ video{
         width: 28px;
         height: 28px;
     }
+      .logoNAV img {
+    width: 120px !important;
+  }
 }
+
+
+
+
+/* --- ADAPTAÇÃO PARA TABLET (768px) --- */
+@media (max-width: 768px) {
+
+
+  .redesNav{
+            padding: 5px 20px;
+        justify-content: start;
+  }
+
+      .redesNav h6 {
+        display: none; /* Esconde o texto @ e deixa só os ícones para poupar espaço */
+    }
+
+      nav {
+        padding: 20px;
+    }
+
+    .containerNAV {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+  .containerSOBRE {
+    background-size: cover;
+  }
+
+  .logoNAV img {
+    width: 150px !important;
+  }
+
+    /* Vídeo */
+    .video {
+        padding: 0 20px;
+    }
+
+.menu-hamburger {
+    display: flex; /* Mostra o hambúrguer */
+  }
+
+  .itensNAV {
+    position: fixed;
+    left: -100%; /* Esconde o menu fora da tela */
+    top: 100px; /* Ajuste conforme a altura do seu header */
+    flex-direction: column;
+    background-color: #020304;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    z-index: 9999;
+  }
+
+  /* Quando o menu estiver ativo */
+  .itensNAV.active {
+    left: 0;
+  }
+
+  /* Animação do X (Transforma as barras em um X) */
+  .menu-hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+    /* Ícones: Reduz o gap e permite quebra de linha se necessário */
+    .icones {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+        gap: 50px;
+        justify-content: center;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .icones img {
+        width: 60px; /* Ajuste o tamanho conforme seus ativos */
+    }
+
+    /* Sessão Principal e Propósito */
+    .Vitrini, .containerProposito {
+        padding: 0 30px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .Vitrini h1::before, .proposito h1::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -15px;
+        width: 60px;
+        height: 2px;
+    }
+
+    .Vitrini p, .proposito p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Cultura */
+    .textoCultura p {
+        padding: 0 30px;
+        font-size: 18px;
+    }
+
+    .certificacoes-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+    }
+        /* Footer */
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-contact {
+        text-align: center;
+        min-width: unset;
+    }
+}
+
+/* --- ADAPTAÇÃO PARA MOBILE (425px) --- */
+@media (max-width: 425px) {
+  .header {
+    gap: 0; /* Remove o espaçamento gigante para a tela menor */
+    width: 100%;
+  }
+
+      .itensNAV {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+  .logoNAV  {
+    width: 150px !important;
+  }
+
+    /* Ajuste de Títulos */
+    .Vitrini h1, .proposito h1, .textoCultura h1 {
+        font-size: 28px;
+    }
+
+    /* Ícones: Grid de 2x2 para caber melhor */
+    .icones {
+        gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    /* Espaçamentos entre seções */
+    .sessaoPrincipal, .textoCultura {
+        margin-top: 60px;
+    }
+
+    .Vitrini p, .proposito p, .textoCultura p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 20px;
+    
+    }
+}
+
+
+/* Prepara o item pai para receber o submenu absoluto */
+.itensNAV .dropdown {
+  position: relative;
+}
+
+/* Estilo do container do submenu oculto por padrão */
+.itensNAV .dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 140%; /* Posiciona logo abaixo do link Soluções */
+  left: -60%;
+  background-color: #ffffff; /* Ajuste para a cor do seu layout */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 4px;
+  transform: translateY(10px); /* Leve recuo para animação */
+  transition: all 0.3s ease;
+  z-index: 999; /* Garante que fique por cima de outros elementos */
+}
+
+/* Estilo dos links internos do dropdown */
+.itensNAV .dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333333; /* Ajuste para a cor do seu layout */
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+/* Efeito Hover nos itens internos */
+.itensNAV .dropdown-content li a:hover {
+  background-color: #f1f1f1; /* Ajuste para a cor do seu layout */
+}
+
+/* Revela o menu no Hover do item pai (.dropdown) */
+.itensNAV .dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Transforma o link <a> em um flex container para alinhar a imagem e o texto */
+.instaNAV a, 
+.ytNAV a {
+  display: flex;
+  flex-direction: row; /* Flex já é row por padrão, mas é bom reforçar */
+  align-items: center; /* Centraliza verticalmente a logo e o texto */
+  text-decoration: none; /* Remove qualquer sublinhado padrão de links */
+  gap: 5px;
+}
+
+/* Remove a margem padrão do h6 que pode desalinhá-lo do centro da imagem */
+.instaNAV h6, 
+.ytNAV h6 {
+  margin: 0;
+  color: #ffffff; /* Ajuste para a cor que você está usando no header */
+} 

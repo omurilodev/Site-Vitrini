@@ -8,6 +8,7 @@
 body{
   background-color: #282828;
   font-family: 'Inter';
+  padding-top: 100px; /* Mesma altura do seu header */
 }
 
 ul, li{
@@ -18,6 +19,8 @@ a{
   text-decoration: none;
   color: white;
 }
+
+
 
 
 .redesNav{
@@ -55,6 +58,22 @@ nav{
   z-index: 10000;
 }
 
+/* Escondido por padrão no Desktop */
+.menu-hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
 
 .containerNAV{
   display: flex;
@@ -72,6 +91,16 @@ nav{
 .itensNAV li{
   color: white;
   z-index: 1000;
+}
+
+
+header {
+  position: -webkit-sticky; /* Suporte para Safari */
+  position: fixed;
+  top: 0;
+  z-index: 10000; /* Garante que fique acima do conteúdo */
+  background-color: #0e0e0e; /* Mantendo o padrão dark que você curte */
+  width: 100%;
 }
 
 /* CONTEÚDO DA HOMEPAGE  */
@@ -194,6 +223,18 @@ nav{
   width: 100%;
 }
 
+.clientesP{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: 400;  
+}
+
+.cont{
+  background-color: #D0CCC6;
+}
+
 .parceiros {
   display: flex;
   gap: 60px; /* Ajuste o espaçamento entre logos aqui */
@@ -210,7 +251,7 @@ nav{
 .parceiros img {
   display: block;
   /* Sugestão: defina uma altura fixa para alinhar todos visualmente */
-  height: 70px; 
+  height: 60px; 
   width: auto;
 }
 
@@ -244,8 +285,8 @@ nav{
   background-image: url(./assets/sobreSessao.webp);
   background-position: top;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  margin-bottom: -25px;
+  min-height: 110vh;
+  margin-bottom: -100px;
 }
 
 .containerSOBRE{
@@ -376,6 +417,7 @@ background: linear-gradient(90deg, #F1F0EC 0%, #999 100%);
   -webkit-text-fill-color: transparent;
   font-size: 42px;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .descricaoBeneficios a{
@@ -399,6 +441,12 @@ font-size: 42px;
 font-style: italic;
 font-weight: 400;
 line-height: normal;
+}
+
+.tituloCard{
+  font-size: 26px !important;
+  text-align: center;
+  margin-bottom: px;
 }
 
 /* SESSÃO DE PROJETOS */
@@ -426,7 +474,9 @@ background-clip: text;
   margin: 0 20px;
 }
 
-
+.projetosSessao{
+  margin-bottom: 80px;
+}
 
 
 .containerImagem{
@@ -441,7 +491,7 @@ background-clip: text;
   /* Posicionamento - Ajuste esses valores "na unha" para cair no lugar certo */
   bottom: 25px;
    /* Distância do fundo */
-  left: 3%;    /* Distância da esquerda (use % para ser responsivo) */
+  left: 2%;    /* Distância da esquerda (use % para ser responsivo) */
   
   /* Estilização básica pra ficar visível */
   z-index: 10; 
@@ -512,10 +562,25 @@ background-clip: text;
 
 /* CERTIFICAÇÕES */
 
+#certificacoes{
+  background: linear-gradient(180deg, #282828 13.04%, #6A6865 100%); /* Exemplo de um tom escuro e sofisticado */
+  width: 100%;
+  padding-bottom: 50px; /* Espaçamento vertical */
+  padding-top: 80px;
+  display: flex;
+  align-items: center; /* <-- ADICIONE ISSO: Centraliza no eixo Y */
+}
+
+.certificacoes img {
+  display: block; /* Remove o "espaço em branco fantasma" que fica embaixo de imagens no HTML */
+  max-height: 100px; /* Defina uma altura máxima padrão para todas. Ajuste esse valor para o que ficar melhor no seu design */
+  width: auto; /* Deixa a largura se ajustar sozinha para não achatar a logo */
+  object-fit: contain; /* Garante que a imagem caiba perfeitamente no espaço sem cortar */
+}
+
 
 .certificacoes-wrapper {
   max-width: 85%; /* Ocupa a largura da tela */
-  margin-top: 120px; /* Seu margin original */
   overflow: hidden; /* Esconde o que sai da tela */
    margin-left: 100px;
   /* Opcional: Fade nas laterais para ficar elegante */
@@ -533,6 +598,7 @@ background-clip: text;
   /* A animação será controlada via JS para garantir fluidez, 
      mas definimos a base aqui */
 }
+
 
 /* Animação que será ativada */
 .certificacoes[data-animated="true"] {
@@ -558,7 +624,6 @@ background-clip: text;
     padding: 20px 20px 40px;
     width: 100%;
     font-family: 'Inter', sans-serif; /* Certifique-se de ter essa fonte ou similar */
-    margin-top: 100px;
 }
 
 .footer-container {
@@ -710,20 +775,250 @@ background-clip: text;
 
 
 /* --- Responsivo --- */
+/* --- ADAPTAÇÃO TABLET (768px) --- */
 @media (max-width: 768px) {
-    .footer-top, .footer-bottom {
+    .redesNav {
+        padding: 5px 20px;
+        justify-content: start;
+    }
+
+.menu-hamburger {
+    display: flex; /* Mostra o hambúrguer */
+  }
+
+  .itensNAV {
+    position: fixed;
+    left: -100%; /* Esconde o menu fora da tela */
+    top: 100px; /* Ajuste conforme a altura do seu header */
+    flex-direction: column;
+    background-color: #020304;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    z-index: 9999;
+  }
+
+  /* Quando o menu estiver ativo */
+  .itensNAV.active {
+    left: 0;
+  }
+
+  /* Animação do X (Transforma as barras em um X) */
+  .menu-hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+    nav {
+        padding: 20px;
+    }
+
+    .containerNAV {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .containerHOME{
+      background-size: cover;
+    }
+
+    .pattern {
+        display: none; /* Remove o pattern para não poluir o visual mobile */
+    }
+
+    .textoHOME h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .textoHOME p {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    /* Sobre */
+    .containerSOBRE {
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .textoSOBRE p {
+        max-width: 100%;
+    }
+
+    .textoSOBRE h1::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -25px;
+        width: 80%;
+        height: 1px;
+    }
+
+    /* Cards de Benefícios */
+    .cards {
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .projetosSessao h1::before,
+    .projetosSessao h1::after {
+        width: 100px; /* Reduz as linhas laterais do título */
+    }
+
+    /* Footer */
+    .footer-top {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px;
     }
-    
+
     .footer-contact {
         text-align: center;
-        min-width: auto; /* Reseta a largura mínima no celular */
+        min-width: unset;
     }
-    
-    .social-icons {
-        margin-bottom: 20px; /* Espaço entre social e logo no celular */
+}
+
+/* --- ADAPTAÇÃO MOBILE (425px) --- */
+@media (max-width: 425px) {
+    .redesNav h6 {
+        display: none; /* Esconde o texto @ e deixa só os ícones para poupar espaço */
     }
+
+    .itensNAV {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .logoNAV {
+        width: 150px;
+    }
+
+    .textoHOME h1 {
+        font-size: 32px;
+    }
+
+    .textoHOME a {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+
+    /* Ajuste da Seção Sobre */
+    .sobreHOME {
+        background-size: cover;
+    }
+
+    /* Cards - Um abaixo do outro no celular */
+    .card-beneficio {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .descricaoBeneficios h1, .degrade {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .botaoSolucoes{
+     color: #282828;
+padding: 18px 42px 17px 41px !important;
+justify-content: center !important;
+align-items: center !important;
+border-radius: 44px !important;
+border-radius: 44px !important;
+background: linear-gradient(90deg, #F1F0EC 0%, #999 100%);
+font-size: 16px !important;
+    }
+
+    /* Projetos */
+    .projetosSessao h1 {
+        font-size: 28px;
+    }
+
+    .projetosSessao h1::before,
+    .projetosSessao h1::after {
+        display: none; /* Remove as linhas em telas muito pequenas */
+    }
+
+    .botaoProjetos {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .containerImagem {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Certificações */
+    .certificacoes-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+
+
+
+/* Prepara o item pai para receber o submenu absoluto */
+.itensNAV .dropdown {
+  position: relative;
+}
+
+/* Estilo do container do submenu oculto por padrão */
+.itensNAV .dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 140%; /* Posiciona logo abaixo do link Soluções */
+  left: -60%;
+  background-color: #ffffff; /* Ajuste para a cor do seu layout */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 4px;
+  transform: translateY(10px); /* Leve recuo para animação */
+  transition: all 0.3s ease;
+  z-index: 999; /* Garante que fique por cima de outros elementos */
+}
+
+/* Estilo dos links internos do dropdown */
+.itensNAV .dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333333; /* Ajuste para a cor do seu layout */
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+/* Efeito Hover nos itens internos */
+.itensNAV .dropdown-content li a:hover {
+  background-color: #f1f1f1; /* Ajuste para a cor do seu layout */
+}
+
+/* Revela o menu no Hover do item pai (.dropdown) */
+.itensNAV .dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
