@@ -250,10 +250,6 @@ nav{
     background-color: #020304;
 }
 
-.footer-nav{
-    background-color: #020304;
-}
-
 .footer-nav a {
     text-decoration: none;
     color: #e0e0e0;
@@ -263,6 +259,15 @@ nav{
 
 .footer-nav a:hover {
     opacity: 0.8;
+}
+
+/* Reseta estilos herdados do nav genérico do header */
+.footer-nav {
+    background-color: #020304;
+    position: static;
+    padding: 0;
+    z-index: auto;
+    max-width: none;
 }
 
 /* Contato (Correção da quebra de linha) */
@@ -339,7 +344,7 @@ nav{
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Garante que fique acima de tudo */
+    z-index: 99999 !important; /* Elevado para não ser coberto por nada no rodapé */
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -434,30 +439,40 @@ nav{
         text-align: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    .textos {
+        margin-top: 60px;
     }
 
     .textos p {
         max-width: 100%;
-        margin: 10px auto;
+        margin: 15px auto 0 auto;
     }
 
     .regua {
-        position: relative; /* Sai do absolute para não sobrepor */
-        top: -100px;
-        right: 0;
-        margin: 0px auto;
-        max-width: 100%; /* Garante que a régua não estoure a tela */
+        position: static; 
+        margin: 50px auto 20px auto;
+        max-width: 90%; 
+        height: auto;
+    }
+
+    .album {
+        margin-top: 20px;
+        padding: 40px 0;
     }
 
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* No tablet, usamos 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(200px, auto);
         padding: 0 20px;
-        margin-top: 5px !important;
+        margin-top: 20px !important;
     }
 
     /* Ajuste dos spans para 2 colunas */
     .span-2, .span-3 {
-        grid-column: span 2; /* Tudo que era grande vira largura total (2/2) */
+        grid-column: span 2; 
     }
 
         .footer-top {
@@ -481,11 +496,11 @@ nav{
         text-align: center;
         display: flex;
         flex-direction: column;
-        
+        align-items: center;
     }
 
     .redesNav h6 {
-        display: none; /* Esconde o texto @ e deixa só os ícones para poupar espaço */
+        display: none; 
     }
 
     .itensNAV {
@@ -494,12 +509,16 @@ nav{
     }
 
     .logoNAV {
-        width: 150px;
+        width: 130px;
     }
 
+    .textos {
+        margin-top: 40px;
+    }
 
     .textos h1 {
-        font-size: 32px;
+        font-size: 34px;
+        line-height: 1.2;
     }
 
     .textos p {
@@ -507,19 +526,24 @@ nav{
     }
 
     .portfolio-grid {
-        grid-template-columns: 1fr; /* No celular, é tudo uma coluna só */
-        grid-auto-rows: 250px; /* Altura um pouco menor para não ficar infinito */
+        grid-template-columns: 1fr; 
+        grid-auto-rows: 250px; 
         gap: 15px;
     }
 
-    /* Reset total dos spans: No mobile, cada projeto ocupa sua própria linha */
     .span-1, .span-2, .span-3 {
         grid-column: span 1;
     }
 
     .regua {
         max-width: 100%;
-        margin-top: 20px;
+        margin: 40px auto 20px auto;
+        position: static;
+    }
+
+    .album {
+        padding: 30px 0;
+        margin-top: 10px;
     }
 
       .footer-bottom {

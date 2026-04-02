@@ -17,6 +17,7 @@ ul, li{
 
 a{
   text-decoration: none;
+  color: white;
 }
 
 header{
@@ -84,7 +85,7 @@ nav{
   flex-direction: row;
   align-items: center;
   justify-content: space-between !important;
-  gap: 620px;
+  gap: 510px;
 }
 
 
@@ -102,9 +103,14 @@ nav{
   gap: 0 20px;
 }
 
+
 .itensNAV li{
   color: white;
   z-index: 1000;
+  white-space: nowrap;
+}
+
+#nav-menu{
 }
 
 header a{
@@ -200,6 +206,64 @@ video{
   margin-top: 100px;
 }
 
+/* Card Vídeo + Texto (padrão Soluções) */
+.sobre-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 1160px;
+}
+
+.sobre-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-video video {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-texto {
+  flex: 1;
+}
+
+.sobre-texto h1 {
+  color: #282828;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  background: none;
+  -webkit-text-fill-color: #282828;
+}
+
+.sobre-texto h1::before {
+  display: none;
+}
+
+.sobre-texto p {
+  color: #444444;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 100%;
+  -webkit-text-fill-color: #444444;
+}
+
+.sobre-item.reverse {
+  flex-direction: row-reverse;
+}
 
 .Vitrini{
   margin-left:  auto;
@@ -402,6 +466,7 @@ video{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background-color: #020304;
 }
 
 .footer-nav a {
@@ -411,12 +476,17 @@ video{
     transition: opacity 0.3s;
 }
 
-.footer-nav{
-  background-color: #020304;
-}
-
 .footer-nav a:hover {
     opacity: 0.8;
+}
+
+/* Reseta estilos herdados do nav genérico do header */
+.footer-nav {
+    background-color: #020304;
+    position: static;
+    padding: 0;
+    z-index: auto;
+    max-width: none;
 }
 
 /* Contato (Correção da quebra de linha) */
@@ -645,6 +715,20 @@ video{
         margin-left: 0;
         max-width: 100%;
     }
+
+    /* Card Vídeo + Texto */
+    .sobre-item {
+        flex-direction: column;
+        margin: 60px 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .sobre-video video {
+        max-width: 100%;
+        height: auto;
+    }
+
         /* Footer */
     .footer-top {
         flex-direction: column;

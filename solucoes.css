@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 140px; 
+  scroll-behavior: smooth;
+}
+
 
 body{
   background-color: #282828;
@@ -19,6 +24,9 @@ a{
   text-decoration: none;
 }
 
+footer a{
+  color: white;
+}
 
 .redesNav{
   display: flex;
@@ -153,29 +161,37 @@ header {
 /* INICIO */
 
 .containerInicio{
-  background-image: url(./assets/fundoSolucoes.webp);
-  min-height:100vh ;
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(20,20,20,0.7) 60%, #282828 100%),
+    url(./assets/fundoSolucoes.webp);
+  min-height: 100vh ;
   background-position: center;
+  background-size: cover; /* Faz a foto pegar de ponta a ponta */
+  background-repeat: no-repeat;
   width: 100%;
 }
 
 .containerSolucoes{
   max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 100px); /* Tira altura do header para centralizar a section principal */
+  padding-top: 80px; /* Garante espaço do fix-header */
 }
 
 
-.textoSolucoes{
-  margin-top: 100px;
-}
+
 
 .textoSolucoes h1{
   color: white;
   font-weight: 300;
   margin-bottom: 20px;
   font-size: 42px;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
-
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
 .textoSolucoes p{
@@ -184,7 +200,7 @@ header {
   margin-bottom: 50px;
   font-size: 18px;
   font-weight: 200;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.30);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
 
 }
 
@@ -221,6 +237,52 @@ header {
   0 0 10px rgba(255, 255, 255, 0.1); /* Brilho interno */
 }
 
+/* SELO DE PARCEIROS NO HERO */
+
+.selo-parceiros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.selo-parceiros span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+.logos-parceiros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logos-parceiros img {
+  width: auto;
+  object-fit: contain;
+}
+
+.logos-parceiros img:nth-child(1) {
+  height: 80px; /* Aumentar logo Solar Gard */
+}
+
+.logos-parceiros img:nth-child(2) {
+  height: 45px; /* Tamanho proporcional da Madico */
+}
+
 /* CONTEÚDO */
 
 .containerConteudo{
@@ -233,6 +295,7 @@ header {
 .containerConteudo2{
   max-width: 1160px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 /* ICONES */
@@ -271,6 +334,27 @@ background-clip: text;
  display: flex;
  flex-direction: column;
  align-items: center;
+ opacity: 0;
+ transform: translateY(30px);
+}
+
+.icones.visivel > div {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.icones.visivel > div:nth-child(1) { animation-delay: 0.2s; }
+.icones.visivel > div:nth-child(2) { animation-delay: 0.5s; }
+.icones.visivel > div:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -306,6 +390,109 @@ background-clip: text;
     fill: #fff;
 }
 
+/* Secões Alternadas de Soluções */
+.solucao-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 80px 0;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.solucao-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.solucao-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.solucao-img img {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.solucao-texto {
+  flex: 1;
+}
+
+.solucao-texto h2 {
+  color: #282828;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  /* Removendo gradiente do texto para dar contraste com o fundo branco */
+}
+
+.solucao-texto p {
+  color: #444444;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+
+#certificacoes{
+  background: linear-gradient(180deg, #282828 13.04%, #6A6865 100%); /* Exemplo de um tom escuro e sofisticado */
+  width: 100%;
+  padding-bottom: 50px; /* Espaçamento vertical */
+  display: flex;
+  align-items: center; /* <-- ADICIONE ISSO: Centraliza no eixo Y */
+}
+
+.certificacoes img {
+  display: block; /* Remove o "espaço em branco fantasma" que fica embaixo de imagens no HTML */
+  max-height: 100px; /* Defina uma altura máxima padrão para todas. Ajuste esse valor para o que ficar melhor no seu design */
+  width: auto; /* Deixa a largura se ajustar sozinha para não achatar a logo */
+  object-fit: contain; /* Garante que a imagem caiba perfeitamente no espaço sem cortar */
+}
+
+
+.certificacoes-wrapper {
+  max-width: 85%; /* Ocupa a largura da tela */
+  overflow: hidden; /* Esconde o que sai da tela */
+   margin-left: 100px;
+  /* Opcional: Fade nas laterais para ficar elegante */
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+/* A "Fita" que se move */
+.certificacoes {
+  display: flex;
+  gap: 90px; /* Seu gap original */
+  width: max-content; /* Força a largura a ser a soma dos itens */
+  flex-wrap: nowrap;
+ 
+  /* A animação será controlada via JS para garantir fluidez, 
+     mas definimos a base aqui */
+}
+
+
+/* Animação que será ativada */
+.certificacoes[data-animated="true"] {
+  animation: scroll 40s linear infinite;
+}
+
+
+@keyframes scroll {
+  to {
+    /* Move para a esquerda 50% do tamanho total (que será o tamanho original + clone) */
+    /* O ajuste de pixels ajuda a compensar o gap no final do loop */
+    transform: translate(calc(-50% - 45px)); 
+  }
+}
+
 /* Responsividade: Ajuste para celulares */
 @media (max-width: 768px) {
     .whatsapp-link {
@@ -318,4 +505,120 @@ background-clip: text;
         width: 28px;
         height: 28px;
     }
+
+    .solucao-item, .solucao-item.reverse {
+      flex-direction: column;
+      margin: 60px 0;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .solucao-img img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Certificações */
+    .certificacoes-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+    }
+    
+    /* Nav Mobile Fixes */
+    .redesNav {
+        padding: 5px 20px;
+        justify-content: start;
+    }
+    .containerNAV { padding: 0 20px; }
+    .menu-hamburger { display: flex; }
+    .itensNAV {
+      position: fixed;
+      left: -100%;
+      top: 100px; 
+      flex-direction: column;
+      background-color: #020304;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+      padding: 40px 0;
+      z-index: 9999;
+    }
+    .itensNAV.active { left: 0; }
+    .itensNAV li { padding: 10px 0; }
+    
+    /* Layout Fixes */
+    .containerSolucoes {
+      padding: 0 20px;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+    }
+    .textoSolucoes {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .textoSolucoes p {
+      margin: 0 auto 30px auto; 
+    }
+    
+    .icones {
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    
+    /* Footer */
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-contact {
+        text-align: center;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 425px) {
+    .textoSolucoes h1 {
+        font-size: 32px;
+    }
+    .textoSolucoes p {
+        font-size: 16px;
+    }
+    .textoSolucoes a {
+        padding: 15px 30px;
+        font-size: 14px;
+        width: 100%; /* Botão full width pro dedo */
+        max-width: 300px;
+    }
+    .containerConteudo h1 {
+        font-size: 26px;
+        padding: 30px 20px;
+        text-align: center;
+        line-height: 1.3;
+    }
+    .solucao-texto h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .solucao-img img {
+        height: auto;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+
+
+footer{
+  margin-top: 0px !important;
 }

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Selecionamos o elemento que queremos animar
-    const alvo = document.querySelector('.logoFUNDO');
+    // 1. Selecionamos os elementos que queremos animar
+    const alvos = document.querySelectorAll('.logoFUNDO, .icones');
 
     // 2. Configuração do observador
     const observer = new IntersectionObserver((entries) => {
@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", function() {
         // Se o elemento entrou na tela...
         if (entry.isIntersecting) {
           // Adiciona a classe que tem a animação
-          alvo.classList.add('visivel');
+          entry.target.classList.add('visivel');
           
           // (Opcional) Para de observar depois que animou a primeira vez
           // Isso evita que a animação rode de novo se o usuário subir e descer a página
-          observer.unobserve(alvo);
+          observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.5 // Dispara quando 40% do elemento estiver visível
+      threshold: 0.3 // Dispara quando 30% do elemento estiver visível
     });
 
-    // 3. Começa a vigiar o elemento
-    observer.observe(alvo);
+    // 3. Começa a vigiar cada elemento
+    alvos.forEach(alvo => observer.observe(alvo));
   });
 
 
@@ -76,34 +76,36 @@ function checkInfiniteLoop() {
 
 // --- Eventos de Mouse (Arrastar) ---
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+if (slider) {
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
 
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
 
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
 
-slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2; // O *2 define a sensibilidade do arrasto
-  slider.scrollLeft = scrollLeft - walk;
-  checkInfiniteLoop();
-});
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // O *2 define a sensibilidade do arrasto
+    slider.scrollLeft = scrollLeft - walk;
+    checkInfiniteLoop();
+  });
 
-// Inicia a animação
-autoPlay();
+  // Inicia a animação
+  autoPlay();
+}
 
 
 

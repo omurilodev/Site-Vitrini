@@ -1,0 +1,101 @@
+.parceiros-page {
+  padding-top: 50px; /* Base padding below header */
+  min-height: calc(100vh - 100px);
+  background-color: #282828; 
+  padding-bottom: 150px;
+}
+
+.containerParceiros {
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.textoParceiros {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.textoParceiros h1 {
+  color: white;
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #D0CCC6 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.textoParceiros p {
+  color: #cccccc;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.grid-parceiros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.card-parceiro {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px; /* Gives nice breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16/9; /* Always keep card rectangle shape */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card-parceiro:hover {
+  transform: translateY(-8px);
+}
+
+.card-parceiro img {
+  max-width: 100%;
+  max-height: 80px; /* limit size to not get too giant when scaling up */
+  object-fit: contain;
+  /* Visual Effect */
+  filter: grayscale(100%) opacity(0.8);
+  transition: filter 0.4s ease;
+}
+
+.card-parceiro:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
+@media (max-width: 768px) {
+  .grid-parceiros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card-parceiro img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 425px) {
+  .grid-parceiros {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .textoParceiros h1 {
+    font-size: 32px;
+  }
+  
+  .card-parceiro {
+    padding: 30px;
+  }
+  
+  .card-parceiro img {
+    max-height: 50px;
+  }
+}

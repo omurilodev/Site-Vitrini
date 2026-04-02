@@ -650,6 +650,7 @@ background-clip: text;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background-color: #020304;
 }
 
 .footer-nav a {
@@ -661,6 +662,15 @@ background-clip: text;
 
 .footer-nav a:hover {
     opacity: 0.8;
+}
+
+/* Reseta estilos herdados do nav genérico do header */
+.footer-nav {
+    background-color: #020304;
+    position: static;
+    padding: 0;
+    z-index: auto;
+    max-width: none;
 }
 
 /* Contato (Correção da quebra de linha) */
