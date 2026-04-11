@@ -124,6 +124,8 @@ header a{
 .containerSOBRE{
   background-image: url(./assets/fundoQUEM.webp);
   background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 

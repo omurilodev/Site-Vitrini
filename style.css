@@ -116,8 +116,9 @@ header {
   background-image: 
     linear-gradient(to bottom, transparent 60%, #282828 100%),
     url(./assets/fundoHome.webp);
-  background-size: 100%;
+  background-size: cover; /* Ajustado de 100% para cover para evitar repetição */
   background-position: center;
+  background-repeat: no-repeat; /* Garante que não repita */
   min-height: 100vh;
 }
 
@@ -288,6 +289,7 @@ header {
     url(./assets/sobreSessao.webp);
   background-position: top;
   background-repeat: no-repeat;
+  background-size: cover; /* Adicionado para cobrir a tela sem repetir */
   min-height: 110vh;
   margin-bottom: -100px;
 }
@@ -861,6 +863,7 @@ background-clip: text;
 
     .containerHOME{
       background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .pattern {
