@@ -437,18 +437,41 @@ video{
 
 /* CERTIFICAÇÕES */
 
+.titulo-certificacoes {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 80px;
+  margin-bottom: 0px;
+  background: linear-gradient(90deg, #D0CCC6 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 20px;
+}
+
 .certificacoes-wrapper {
   max-width: 85%; /* Ocupa a largura da tela */
-  margin-top: 120px; /* Seu margin original */
+  margin-top: 40px; /* Reduzido de 120px para aproximar do título */
   overflow: hidden; /* Esconde o que sai da tela */
    margin-left: 100px;
   /* Opcional: Fade nas laterais para ficar elegante */
   -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-  padding-bottom: 100px;
+  padding-bottom: 80px; /* Aumentado para dar respiro em relação ao footer */
+  cursor: grab;
+  user-select: none;
+}
+
+.certificacoes-wrapper:active {
+  cursor: grabbing;
 }
 
 /* A "Fita" que se move */
+.certificacoes img {
+    pointer-events: none;
+    user-select: none;
+}
 .certificacoes {
   display: flex;
   gap: 90px; /* Seu gap original */
@@ -459,9 +482,9 @@ video{
      mas definimos a base aqui */
 }
 
-/* Animação que será ativada */
+/* A animação será controlada via JS para garantir fluidez e interatividade */
 .certificacoes[data-animated="true"] {
-  animation: scroll 40s linear infinite;
+  /* Removemos a animação CSS daqui */
 }
 
 
@@ -753,6 +776,10 @@ video{
     .textoCultura p {
         padding: 0 30px;
         font-size: 18px;
+    }
+
+    .titulo-certificacoes {
+        font-size: 20px;
     }
 
     .pilares {

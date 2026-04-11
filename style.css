@@ -113,11 +113,12 @@ header {
 }
 
 .containerHOME{
-  background-image: url(./assets/fundoHome.webp);
+  background-image: 
+    linear-gradient(to bottom, transparent 60%, #282828 100%),
+    url(./assets/fundoHome.webp);
   background-size: 100%;
   background-position: center;
   min-height: 100vh;
-  
 }
 
 .HOME{
@@ -282,7 +283,9 @@ header {
 /* SESSÃO SOBRE HOMEPAGE */
 
 .sobreHOME{
-  background-image: url(./assets/sobreSessao.webp);
+  background-image: 
+    linear-gradient(to bottom, #282828 0%, transparent 20%),
+    url(./assets/sobreSessao.webp);
   background-position: top;
   background-repeat: no-repeat;
   min-height: 110vh;
@@ -568,7 +571,20 @@ background-clip: text;
   padding-bottom: 50px; /* Espaçamento vertical */
   padding-top: 80px;
   display: flex;
-  align-items: center; /* <-- ADICIONE ISSO: Centraliza no eixo Y */
+  flex-direction: column; /* <-- ADICIONE ISSO: Garante que o título fique em cima */
+  align-items: center; 
+}
+
+.titulo-certificacoes {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #D0CCC6 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 20px;
 }
 
 .certificacoes img {
@@ -576,6 +592,8 @@ background-clip: text;
   max-height: 100px; /* Defina uma altura máxima padrão para todas. Ajuste esse valor para o que ficar melhor no seu design */
   width: auto; /* Deixa a largura se ajustar sozinha para não achatar a logo */
   object-fit: contain; /* Garante que a imagem caiba perfeitamente no espaço sem cortar */
+  pointer-events: none; /* Impede que a imagem seja "paga" e arrastada individualmente */
+  user-select: none;
 }
 
 
@@ -586,6 +604,12 @@ background-clip: text;
   /* Opcional: Fade nas laterais para ficar elegante */
   -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  cursor: grab; /* Indica que é interativo */
+  user-select: none;
+}
+
+.certificacoes-wrapper:active {
+  cursor: grabbing;
 }
 
 /* A "Fita" que se move */
@@ -600,9 +624,9 @@ background-clip: text;
 }
 
 
-/* Animação que será ativada */
+/* A animação será controlada via JS para garantir fluidez e interatividade */
 .certificacoes[data-animated="true"] {
-  animation: scroll 40s linear infinite;
+  /* Removemos a animação CSS daqui para evitar conflitos com o arrasto manual */
 }
 
 
@@ -975,6 +999,12 @@ border-radius: 44px !important;
 border-radius: 44px !important;
 background: linear-gradient(90deg, #F1F0EC 0%, #999 100%);
 font-size: 16px !important;
+    }
+
+    /* Certificações Mobile */
+    .titulo-certificacoes {
+        font-size: 20px;
+        margin-bottom: 15px;
     }
 
     /* Projetos */
