@@ -391,6 +391,50 @@ video{
 
 
 
+/* PILARES DA CULTURA */
+
+.pilares {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1160px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.pilar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.pilar:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.pilar h3 {
+  background: linear-gradient(102deg, #D0CCC6 5.81%, #999 87.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.pilar p {
+  color: #aaaaaa;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
 /* CERTIFICAÇÕES */
 
 .certificacoes-wrapper {
@@ -711,6 +755,11 @@ video{
         font-size: 18px;
     }
 
+    .pilares {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
     .certificacoes-wrapper {
         margin-left: 0;
         max-width: 100%;
@@ -722,6 +771,10 @@ video{
         margin: 60px 20px;
         gap: 20px;
         text-align: center;
+    }
+
+    .sobre-item.reverse {
+        flex-direction: column;
     }
 
     .sobre-video video {
@@ -777,9 +830,28 @@ video{
         margin-top: 60px;
     }
 
+    .sobre-item,
+    .sobre-item.reverse {
+        flex-direction: column;
+        margin: 40px 15px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .sobre-video video {
+        max-width: 100%;
+        height: auto;
+    }
+
     .Vitrini p, .proposito p, .textoCultura p {
         font-size: 16px;
         line-height: 1.5;
+    }
+
+    .pilares {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
     }
 
     /* Footer */
@@ -852,4 +924,4 @@ video{
 .ytNAV h6 {
   margin: 0;
   color: #ffffff; /* Ajuste para a cor que você está usando no header */
-} 
+}
