@@ -650,8 +650,8 @@ video{
     fill: #fff;
 }
 
-/* Responsividade: Ajuste para celulares */
-@media (max-width: 768px) {
+/* Responsividade: Ajuste para tablets/celulares */
+@media (max-width: 900px) {
     .whatsapp-link {
         bottom: 15px;
         right: 15px;
@@ -670,8 +670,8 @@ video{
 
 
 
-/* --- ADAPTAÇÃO PARA TABLET (768px) --- */
-@media (max-width: 768px) {
+/* --- ADAPTAÇÃO PARA TABLET (900px) --- */
+@media (max-width: 900px) {
 
 
   .redesNav{

@@ -811,8 +811,8 @@ background-clip: text;
 
 
 /* --- Responsivo --- */
-/* --- ADAPTAÇÃO TABLET (768px) --- */
-@media (max-width: 768px) {
+/* --- ADAPTAÇÃO TABLET (900px) --- */
+@media (max-width: 900px) {
     .redesNav {
         padding: 5px 20px;
         justify-content: start;

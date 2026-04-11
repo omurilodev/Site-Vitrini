@@ -512,8 +512,8 @@ background-clip: text;
   }
 }
 
-/* Responsividade: Ajuste para celulares */
-@media (max-width: 768px) {
+/* Responsividade: Ajuste para tablets/celulares */
+@media (max-width: 900px) {
     .whatsapp-link {
         bottom: 15px;
         right: 15px;
