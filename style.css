@@ -1018,6 +1018,24 @@ background-clip: text;
     }
 }
 
+/* --- AJUSTE ESPECÍFICO TABLET (768px) --- */
+@media (min-width: 426px) and (max-width: 768px) {
+    .containerHOME {
+        min-height: auto;
+    }
+
+    .HOME {
+        min-height: 60vh;
+        padding: 40px 20px;
+    }
+
+    .sobreHOME {
+        min-height: auto;
+        padding-bottom: 60px;
+        margin-bottom: 0;
+    }
+}
+
 /* --- ADAPTAÇÃO MOBILE (425px) --- */
 @media (max-width: 425px) {
     .redesNav h6 {

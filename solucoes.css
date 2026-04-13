@@ -604,6 +604,28 @@ background-clip: text;
     }
 }
 
+/* --- AJUSTE ESPECÍFICO TABLET (768px) --- */
+@media (min-width: 426px) and (max-width: 768px) {
+    .containerInicio {
+        min-height: auto;
+    }
+
+    .containerSolucoes {
+        min-height: auto;
+        padding: 60px 20px 60px;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .textoSolucoes {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media (max-width: 425px) {
     .textoSolucoes h1 {
         font-size: 32px;
