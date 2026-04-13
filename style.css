@@ -1060,17 +1060,19 @@ background-clip: text;
         padding: 40px 20px;
         display: flex;
         flex-direction: column;
+        flex-wrap: nowrap; /* Impede que os cards quebrem em 2 colunas no Safari */
         align-items: center;
     }
 
     /* Cards - Agora em uma única coluna no celular */
     .cards {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important; /* !important garante 1 coluna no Safari */
         justify-items: center;
         gap: 30px;
         width: 100%;
-        margin-bottom: 40px;
+        max-width: 320px; /* Limita a largura para centralizar melhor */
+        margin: 0 auto 40px auto;
     }
 
     .card-beneficio {
@@ -1196,25 +1198,25 @@ font-size: 16px !important;
 }
 
 /* --- ADAPTAÇÃO MOBILE (480px) --- */
-/* Mude o 425px para 480px. Isso vai abraçar todos os iPhones Pro Max e Galaxies modernos */
 @media (max-width: 480px) {
-    
-    /* ... mantenha o resto do seu código mobile ... */
+
+    .descricaoBeneficios {
+        flex-wrap: nowrap; /* Impede 2 colunas no Safari */
+    }
 
     .cards {
         display: grid;
-        grid-template-columns: 1fr; /* Agora sim, FORÇA uma coluna única */
+        grid-template-columns: 1fr !important; /* Força coluna única no Safari */
         justify-items: center;
         gap: 30px;
         width: 100%;
-        margin-bottom: 40px;
+        max-width: 320px;
+        margin: 0 auto 40px auto;
     }
     
     .card-beneficio {
         width: 100%;
         max-width: 280px;
-        margin: 0 auto; /* Mantém ele centralizado */
+        margin: 0 auto;
     }
-
-    /* ... mantenha o resto do código ... */
 }
