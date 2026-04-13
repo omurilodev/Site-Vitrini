@@ -454,6 +454,75 @@ line-height: normal;
   margin-bottom: px;
 }
 
+/* CONTAINER PAI DA SESSÃO */
+.descricaoBeneficios {
+  background-image: url(./assets/fundoHome2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* 1. Troque vh por dvh para não bugar no iOS */
+  min-height: 100dvh; 
+  display: flex;
+  
+  /* 2. O Segredo do Safari: Force o empilhamento vertical! */
+  flex-direction: column; 
+  align-items: center;    /* Centraliza o Título, os Cards e o Botão no meio da tela */
+  justify-content: center;
+  
+  gap: 30px; 
+  padding: 80px 50px;     /* Mais seguro que usar apenas no eixo X */
+  position: relative;
+}
+
+/* CONTAINER DOS 4 CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  
+  /* 3. Permite que os cards pulem de linha se não couberem */
+  flex-wrap: wrap; 
+  
+  gap: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* O CARD INDIVIDUAL */
+.card-beneficio {
+  position: relative; 
+  width: 260px;       
+  display: flex;
+  flex-direction: column;
+  
+  /* 4. Força os itens a ancorarem do topo, corrigindo a leitura absoluta do Safari */
+  justify-content: flex-start; 
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* O TEXTO DENTRO DA IMAGEM */
+.card-beneficio p {
+  position: absolute;
+  /* Dica: Como você tem o H1 em cima, o centro exato da imagem de vidro 
+     geralmente fica um pouco mais abaixo no cálculo do Flexbox. 
+     Se no Safari ainda ficar descentralizado, ajuste esse 50% para ~55% */
+  top: 50%;           
+  left: 50%;          
+  transform: translate(-50%, -50%); /* Tirei o -60% para centralizar perfeitamente */
+  width: 80%;         
+  text-align: center;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;    
+  line-height: 1.4;   
+  margin: 0;
+  background: linear-gradient(90deg, #D0CCC6 0%, #8B8A88 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* SESSÃO DE PROJETOS */
 
 .projetosSessao h1{
