@@ -1066,13 +1066,23 @@ background-clip: text;
 
     /* Cards - Agora em uma única coluna no celular */
     .cards {
-        display: grid;
-        grid-template-columns: 1fr !important; /* !important garante 1 coluna no Safari */
-        justify-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
         gap: 30px;
         width: 100%;
-        max-width: 320px; /* Limita a largura para centralizar melhor */
         margin: 0 auto 40px auto;
+    }
+
+    .card-beneficio {
+        width: 280px;
+        overflow: hidden; /* Impede o texto absoluto de vazar para fora no Safari */
+    }
+
+    .card-beneficio p {
+        font-size: 14px !important; /* Reduz para caber dentro da moldura no mobile */
+        line-height: 1.3;
     }
 
     .card-beneficio {
@@ -1201,22 +1211,26 @@ font-size: 16px !important;
 @media (max-width: 480px) {
 
     .descricaoBeneficios {
-        flex-wrap: nowrap; /* Impede 2 colunas no Safari */
+        flex-wrap: nowrap;
     }
 
     .cards {
-        display: grid;
-        grid-template-columns: 1fr !important; /* Força coluna única no Safari */
-        justify-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
         gap: 30px;
         width: 100%;
-        max-width: 320px;
         margin: 0 auto 40px auto;
     }
-    
+
     .card-beneficio {
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
+        width: 280px;
+        overflow: hidden;
+    }
+
+    .card-beneficio p {
+        font-size: 14px !important;
+        line-height: 1.3;
     }
 }
