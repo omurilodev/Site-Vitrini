@@ -1194,3 +1194,27 @@ font-size: 16px !important;
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- ADAPTAÇÃO MOBILE (480px) --- */
+/* Mude o 425px para 480px. Isso vai abraçar todos os iPhones Pro Max e Galaxies modernos */
+@media (max-width: 480px) {
+    
+    /* ... mantenha o resto do seu código mobile ... */
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr; /* Agora sim, FORÇA uma coluna única */
+        justify-items: center;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .card-beneficio {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto; /* Mantém ele centralizado */
+    }
+
+    /* ... mantenha o resto do código ... */
+}
