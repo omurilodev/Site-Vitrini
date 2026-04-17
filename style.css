@@ -880,8 +880,8 @@ background-clip: text;
 
 
 /* --- Responsivo --- */
-/* --- ADAPTAÇÃO TABLET (900px) --- */
-@media (max-width: 900px) {
+/* --- ADAPTAÇÃO TABLET (899px) --- */
+@media (max-width: 899px) {
     .redesNav {
         padding: 5px 20px;
         justify-content: start;
@@ -933,6 +933,12 @@ background-clip: text;
     .containerHOME{
       background-size: cover;
       background-repeat: no-repeat;
+      min-height: auto;
+    }
+
+    .HOME {
+        min-height: 60vh;
+        padding: 40px 20px;
     }
 
     .pattern {
@@ -955,8 +961,8 @@ background-clip: text;
         background-color: #282828;
         background-position: top center;
         background-size: cover;
-        padding-bottom: 80px;
-        min-height: 130vh;
+        padding-bottom: 60px;
+        min-height: auto;
     }
 
     .descricaoBeneficios {
